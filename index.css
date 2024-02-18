@@ -6,7 +6,7 @@ html, body {
 body {
   font-family: 'Press Start 2P', cursive;
   background: repeating-linear-gradient(
-    to bottom,
+    0deg,
     #0f0a1e,
     #0f0a1e 2px,
     lighten(#0f0a1e, 3%) 2px,
