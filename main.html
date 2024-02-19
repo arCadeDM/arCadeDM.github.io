@@ -20,12 +20,18 @@
   height: auto;
   border-radius: 30px;
 }
-.locked {
+.locked_old {
   background: url(img/icon_lock_small.png);
   background-position: center;
   background-repeat: no-repeat;
   width: 100%;
   height: auto;
+  border-radius: 30px;
+}
+.locked {
+  background: url(img/icon_lock_small.png);
+  background-position: center;
+  background-repeat: no-repeat;
   border-radius: 30px;
 }
 .responsive {
@@ -65,9 +71,9 @@
 <div class="grid-container">
   <div class="item1">Header</div>
   <div class="item2">L1</div>  
-  <div class="item3">R1</div>
-  <div class="item4">L2</div>
-  <div class="item5">R2</div>
+  <div class="item3, locked">R1</div>
+  <div class="item4, locked">L2</div>
+  <div class="item5, locked">R2</div>
 </div>
   
   <p id="rcorners2"></p>
