@@ -3,27 +3,23 @@
 <head>
   <title>main</title>
 <style> 
-#rcorners2 {
-  border-radius: 25px;
-  background: url(img/icon_lock_small.png);
-  background-position: center;
-  background-repeat: no-repeat;
-  padding: 20px; 
-  width: 200px;
-  height: 150px;  
-}
-#rcorners3 {
-  background: url(img/icon_lock_small.png);
-  background-position: center;
-  background-repeat: no-repeat;
-  width: 100%;
-  height: auto;
-  border-radius: 30px;
-}
+  
 .locked {
   background: url(img/icon_lock_small.png);
   background-position: center;
   background-repeat: no-repeat;
+}
+
+.colorChange {
+  font-family: monospace;
+  font-size: 3em;
+  animation: color-change 1s infinite;
+}
+
+@keyframes color-change {
+  0% { color: red; }
+  50% { color: blue; }
+  100% { color: red; }
 }
   
 .item1 { grid-area: header; }
@@ -39,7 +35,7 @@
     'L1 R1'
     'L2 R2';
   gap: 10px;
-  background-color: #2196F3;
+  background-color: black;
   padding: 10px;
   height: auto;
 }
@@ -50,6 +46,7 @@
   padding: 20px 0;
   font-size: 30px;
   width: 100%;
+  min-height: 150px;
   height: auto;
   border-radius: 30px;
 }
@@ -59,7 +56,7 @@
 <body style="background-color:black;">
 
 <div class="grid-container">
-  <div class="item1">Cade D. Maguire's ARCADE</div>
+  <div class="item1, colorChange">Cade D. Maguire's ARCADE</div>
   <div class="item2">CHIP BOY & ULTRA BOY</div>  
   <div class="item3, locked"></div>
   <div class="item4, locked"></div>
