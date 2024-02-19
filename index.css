@@ -10,6 +10,7 @@ body {
   background: repeating-linear-gradient(to bottom, #0f0a1e, #0f0a1e 2px, #140e29 2px, #140e29 4px);
 }
 div {
+  cursor: pointer;
   position: absolute;
   top: 0;
   left: 0;
