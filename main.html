@@ -25,10 +25,43 @@
   height: auto;
   border-radius: 30px;
 }
+  
+.item1 { grid-area: header; }
+.item2 { grid-area: L1; }
+.item3 { grid-area: R1; }
+.item4 { grid-area: L2; }
+.item5 { grid-area: R2; }
+
+.grid-container {
+  display: grid;
+  grid-template-areas:
+    'header header header header'
+    'L1 R1'
+    'L2 R2';
+  gap: 10px;
+  background-color: #2196F3;
+  padding: 10px;
+}
+
+.grid-container > div {
+  background-color: rgba(255, 255, 255, 0.8);
+  text-align: center;
+  padding: 20px 0;
+  font-size: 30px;
+}
+  
 </style>
 </head>
-<body style="background-color:black;text-align:center">
+<body style="background-color:black;">
 
+<div class="grid-container">
+  <div class="item1">Header</div>
+  <div class="item2">L1</div>  
+  <div class="item3">R1</div>
+  <div class="item4">L2</div>
+  <div class="item5">R2</div>
+</div>
+  
   <p id="rcorners2"></p>
   <p id="rcorners3"></p>
 
