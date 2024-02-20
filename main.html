@@ -57,16 +57,28 @@
   border-radius: 30px;
 }
   
+.caption {
+    display: block; /* Make the caption a block so it occupies its own line. */
+}
+  
 </style>
 </head>
 <body style="background-color:black; font-family: barcade;">
 
 <div class="grid-container">
   <div class="item1">Cade D. Maguire's<div class="colorChange">ARCADE</div></div>
+  
   <div class="item2, chipBoy">CHIP BOY<br/>&<br/>ULTRA BOY</div>  
+  
   <div class="item3, locked">COMING SOON</div>
-  <div class="item4, locked">COMING SOON</div>
-  <div class="item5, locked">COMING SOON</div>
+  
+  <div class="item4, locked">
+    <span class="caption">COMING SOON</span>
+  </div>
+  
+  <div class="item5, locked">
+    <span class="caption">COMING SOON</span>
+  </div>
 </div>
   
 </body>
