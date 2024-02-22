@@ -1,1 +1,35 @@
-CHIP BOY & ULTRA BOY
+<!doctype html>
+<head>
+    <title>CHIP BOY & ULTRA BOY</title>
+    <meta charset="utf-8">
+    <style>
+        body {
+            background-color: black;
+            color: green;
+        }
+        canvas {
+            margin: 0 auto;
+        }
+    </style>
+</head>
+<body>
+    <div id="game"></div>
+    <script type="module">
+        window.addEventListener('unhandledrejection', event => {
+            // Prevent error output on the console:
+            event.preventDefault();
+            document.getElementById("game").innerHTML += 
+                'Rejection reason: ' + event.reason;
+        });
+        window.onpossiblyunhandledexception = function(){
+            window.onerror.apply(this, arguments);
+        }
+        window.onerror = function(err){
+            document.getElementById("game").innerHTML += err;
+        }
+    </script>
+    <script src="js/3rdparty/phaser.min.js"></script>
+    <script src="js/sidescroller/Hero2.js"></script>
+    <script src="js/sidescroller/PlayState.js"></script>
+    <script src="js/main.js"></script>
+</body>
