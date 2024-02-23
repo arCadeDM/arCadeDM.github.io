@@ -64,8 +64,21 @@ class PlayState {
         }
     }
 
+    validateData(data) {
+        if (typeof data === 'undefined') {
+            return buildDefaultData();
+        }
+    }
+
+    buildDefaultData() {
+        return {
+            gravity: 120;
+        };
+    }
+    
     // Game State 1: Init
     init(data) {
+        
         // ToDo: make this configurable. The player should be able to choose which keys map to which actions.
         // Translate keyboard keys to input:
         this.keys = this.game.input.keyboard.addKeys({
@@ -86,10 +99,11 @@ class PlayState {
         this.hasKey = false;
     
         this.hasCheese = false;
+
+        data = validateData(data);
         
-        this.level = 
-            (typeof data !== 'undefined' && typeof data.level !== 'undefined') ? 
-            data.level : 0;
+        this.level = (typeof data !== 'undefined' && typeof data.level !== 'undefined') 
+            ? data.level : 0;
     }
 
     getFps(thisLoop, lastLoop) {
