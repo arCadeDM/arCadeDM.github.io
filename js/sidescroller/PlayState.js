@@ -1329,7 +1329,7 @@ class PlayState {
       }
     
     _setLevelDataFromJson(data) {
-        if (typeof data !== 'undefined' && typeof data.world !== 'undefined' {
+        if (typeof data !== 'undefined' && typeof data.world !== 'undefined') {
             let boundW = (data.world.w < this.game.width) ? this.game.width : data.world.w;
             let boundH = (data.world.h < this.game.height) ? this.game.height : data.world.h;
             this.game.world.setBounds(0, 0, boundW, boundH);
@@ -1339,7 +1339,7 @@ class PlayState {
         }
         
         // spawn level landscape:
-        if (typeof data !== 'undefined' && typeof data.landscape !== 'undefined' {
+        if (typeof data !== 'undefined' && typeof data.landscape !== 'undefined') {
             data.landscape.forEach(function (land) {
                 var rXTotal = (land.repeatX || 0);
                 var rYTotal = (land.repeatY || 0);
