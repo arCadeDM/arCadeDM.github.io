@@ -24,14 +24,14 @@ if (Math.abs(window.orientation) == 90) {
     gameHeight = tempDim;
 }
 
-let debugLabel1;
-let debugText1 = "";
+var debugLabel1;
+var debugText1 = "";
 
-let debugLabel2;
-let debugTextKeyD = "";//"Keys: Up=n; Down=n; Left=n; Right=n; D=n; Debug=" + (debugLevel>0 ? "y" : "n") + ";";
+var debugLabel2;
+var debugTextKeyD = "";//"Keys: Up=n; Down=n; Left=n; Right=n; D=n; Debug=" + (debugLevel>0 ? "y" : "n") + ";";
 
-let debugLabelFps;
-let debugTextFps;
+var debugLabelFps;
+var debugTextFps;
 
 // By default, we go to the next level.
 var nextLevelIncrement = 1;
