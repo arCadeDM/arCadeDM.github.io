@@ -1521,6 +1521,7 @@ class PlayState {
         let buttonUpX = controlsX + controlWidthLR - controlWidthLR/2 + controlsPad;
         let buttonUpY = this.game.height - screenPad - controlHeightUD*2 - controlsPad;
 
+        /*
         const ALPHANUMERIC = 
             ' !"#$%&\'()*+,-.' + '/0123456789:;<=' + 
             '>?@ABCDEFGHIJKL' + 'MNOPQRSTUVWXYZ[' + 
@@ -1542,7 +1543,6 @@ class PlayState {
         //player1NameImg.anchor.set(0, 0.5);
         player1Font.text = "PLAYER 1";
 
-        /*
         this.coinFont = this.game.add.retroFont('fonts:x05mo', 20, 20, ALPHANUMERIC, 15);
         this._updateCoinText();
 
