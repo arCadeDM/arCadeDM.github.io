@@ -66,7 +66,7 @@ class PlayState {
 
     validateData(data) {
         if (typeof data === 'undefined') {
-            return buildDefaultData();
+            return this.buildDefaultData();
         }
     }
 
@@ -109,7 +109,7 @@ class PlayState {
     
         this.hasCheese = false;
 
-        data = validateData(data);
+        data = this.validateData(data);
         
         this.level = (typeof data !== 'undefined' && typeof data.level !== 'undefined') 
             ? data.level : 0;
