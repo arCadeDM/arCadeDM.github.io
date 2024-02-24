@@ -265,7 +265,9 @@ class PlayState {
         }
         else if (debugLevel === 2) {
             debugText1 = "";
-            this.game.debug.bodyInfo(this.hero, this.tileWidth*2, this.tileWidth*2);
+            if (typeof this.hero !== 'undefined') {
+                this.game.debug.bodyInfo(this.hero, this.tileWidth*2, this.tileWidth*2);
+            }
         }
         else if (debugLevel === 3) {
             this.game.debug.cameraInfo(this.game.camera, this.tileWidth*2, this.tileWidth*2);
