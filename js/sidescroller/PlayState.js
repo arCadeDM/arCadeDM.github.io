@@ -1329,68 +1329,77 @@ class PlayState {
       }
     
     _setLevelDataFromJson(data) {
-        let boundW = (data.world.w < this.game.width) ? this.game.width : data.world.w;
-        let boundH = (data.world.h < this.game.height) ? this.game.height : data.world.h;
-        this.game.world.setBounds(0, 0, boundW, boundH);
-    
+        if (typeof data !== 'undefined' && typeof data.world !== 'undefined' {
+            let boundW = (data.world.w < this.game.width) ? this.game.width : data.world.w;
+            let boundH = (data.world.h < this.game.height) ? this.game.height : data.world.h;
+            this.game.world.setBounds(0, 0, boundW, boundH);
+        }
+        else {
+            this.game.world.setBounds(0, 0, this.game.width,this.game.height);
+        }
+        
         // spawn level landscape:
-        data.landscape.forEach(function (land) {
-            var rXTotal = (land.repeatX || 0);
-            var rYTotal = (land.repeatY || 0);
-            var landX = (land.x32>=0) ? land.x32*this.tileWidth : land.x;
-            var landY = (land.y32>=0) ? land.y32*this.tileWidth : land.y;
-            var landWidth = (land.w32>=0) ? land.w32*this.tileWidth : this.tileWidth;
-            var landHeight = (land.h32>=0) ? land.h32*this.tileWidth : this.tileWidth;
-    
-            var landItemBound = this.game.add.sprite(landX, landY);
-            landItemBound.width = landWidth + this.tileWidth*rXTotal;
-            landItemBound.height = landHeight + this.tileWidth*rYTotal;
-            this.game.physics.enable(landItemBound);
-            landItemBound.body.allowGravity = false;
-            landItemBound.body.immovable = true;
-    
-            // custom properties:
-            landItemBound.grab = (land.grab) ? true : false;
-            landItemBound.wallJump = (land.wallJump) ? true : false;
-    
-            // custom collisions:
-            landItemBound.body.checkCollision.up = land.cU;
-            landItemBound.body.checkCollision.down = land.cD;
-            landItemBound.body.checkCollision.left = land.cL;
-            landItemBound.body.checkCollision.right = land.cR;
-    
-            this.landscapeBounds.add(landItemBound);
-    
-            for (var rX = 0; rX <= rXTotal; rX++) {
-                for (var rY = 0; rY <= rYTotal; rY++) {
-                    let landFrame = 
-                        (land.framesX) ? land.framesX[rX] : 
-                        (land.framesY) ? land.framesY[rY] :
-                        land.frame;
-                    this.landscape.add(
-                        this.game.add.image(landX + (rX*landWidth), landY + (rY*landHeight), 'landscape', landFrame)
-                    );
+        if (typeof data !== 'undefined' && typeof data.landscape !== 'undefined' {
+            data.landscape.forEach(function (land) {
+                var rXTotal = (land.repeatX || 0);
+                var rYTotal = (land.repeatY || 0);
+                var landX = (land.x32>=0) ? land.x32*this.tileWidth : land.x;
+                var landY = (land.y32>=0) ? land.y32*this.tileWidth : land.y;
+                var landWidth = (land.w32>=0) ? land.w32*this.tileWidth : this.tileWidth;
+                var landHeight = (land.h32>=0) ? land.h32*this.tileWidth : this.tileWidth;
+        
+                var landItemBound = this.game.add.sprite(landX, landY);
+                landItemBound.width = landWidth + this.tileWidth*rXTotal;
+                landItemBound.height = landHeight + this.tileWidth*rYTotal;
+                this.game.physics.enable(landItemBound);
+                landItemBound.body.allowGravity = false;
+                landItemBound.body.immovable = true;
+        
+                // custom properties:
+                landItemBound.grab = (land.grab) ? true : false;
+                landItemBound.wallJump = (land.wallJump) ? true : false;
+        
+                // custom collisions:
+                landItemBound.body.checkCollision.up = land.cU;
+                landItemBound.body.checkCollision.down = land.cD;
+                landItemBound.body.checkCollision.left = land.cL;
+                landItemBound.body.checkCollision.right = land.cR;
+        
+                this.landscapeBounds.add(landItemBound);
+        
+                for (var rX = 0; rX <= rXTotal; rX++) {
+                    for (var rY = 0; rY <= rYTotal; rY++) {
+                        let landFrame = 
+                            (land.framesX) ? land.framesX[rX] : 
+                            (land.framesY) ? land.framesY[rY] :
+                            land.frame;
+                        this.landscape.add(
+                            this.game.add.image(landX + (rX*landWidth), landY + (rY*landHeight), 'landscape', landFrame)
+                        );
+                    }
                 }
-            }
-    
-        }, this);
-    
-        this._spawnKey(data.key.x, data.key.y);
-        this._spawnDoor(data.door.x, data.door.y);
+        
+            }, this);
+        }
+        
+        //this._spawnKey(data.key.x, data.key.y);
+        //this._spawnDoor(data.door.x, data.door.y);
         
         // spawn important objects
-        if (data.coins) {
+        /*if (data.coins) {
             //data.coins.forEach(this._spawnCoin, this);
             data.coins.forEach(function (c) {
                 this._spawnCoin(c.x, c.y);
             }, this);
-        }
+        }*/
 
         // spawn hero
+        /*
         let initialHeroX = (data.hero.x32 >= 0 ? data.hero.x32 * this.tileWidth : data.hero.x);
         let initialHeroY = (data.hero.y32 >= 0 ? data.hero.y32 * this.tileWidth : data.hero.y);
         this.hero = new Hero2(this.game, initialHeroX, initialHeroY);
         this.game.add.existing(this.hero);
+        */
     }
     
     _loadLevel(data) {
