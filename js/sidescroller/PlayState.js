@@ -65,9 +65,9 @@ class PlayState {
     }
 
     validateData(data) {
-        if (typeof data === 'undefined') {
-            return this.buildDefaultData();
-        }
+        return (typeof data === 'undefined')
+            ? this.buildDefaultData()
+            : data;
     }
 
     buildDefaultData() {
