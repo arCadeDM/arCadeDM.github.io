@@ -780,11 +780,11 @@ class PlayState {
         graphics.beginFill(0x171c23); // ToDo: this color should come from JSON based on the tileset.
 
         // 2D array where values correspond to free-space or wall:
-        this.mapBounds = MAZE.buildMap(width, height, true);
+        //this.mapBounds = MAZE.buildMap(width, height, true); // ToDo no MAZE!
         
         // Collection of bounding box rectangles, 
         // consolidated off the original 2D array maze:  
-        this.boundingBoxes = MAZE.buildBoundingBoxes(this.mapBounds, this.wall);
+        //this.boundingBoxes = MAZE.buildBoundingBoxes(this.mapBounds, this.wall); // ToDo no MAZE!
 
         this.mapBoundsTiles = this._buildMazeTileGroups(this.boundingBoxes);
         
@@ -836,18 +836,18 @@ class PlayState {
             initialDoorY = data.door.y;
         }
         else if (data.door.pos && data.door.pos === "random") {
-            nodesWithWallUnderneath = MAZE.getNodesWithWallUnderneath(this.mapBounds);
+            nodesWithWallUnderneath = MAZE.getNodesWithWallUnderneath(this.mapBounds); // ToDo no MAZE!
     
             // The space 1 below (move 0 x spaces, move down 1 y space) needs to be a wall:
-            let requireBorderUnderneath = [ { "x": 0, "y": 1, "spaceValue": MAZE.MAP_SPACE_WALL } ];
-            let freeSpace = MAZE.getRandomSpaceByValue(this.mapBounds, MAZE.MAP_SPACE_FREE, requireBorderUnderneath);
+            let requireBorderUnderneath = [ { "x": 0, "y": 1, "spaceValue": MAZE.MAP_SPACE_WALL } ]; // ToDo no MAZE!
+            let freeSpace = MAZE.getRandomSpaceByValue(this.mapBounds, MAZE.MAP_SPACE_FREE, requireBorderUnderneath); // ToDo no MAZE!
             mapPosDoorX = freeSpace.columnIndex;
             mapPosDoorY = freeSpace.rowIndex;
             initialDoorX = mapPosDoorX*pathWidth + (pathWidth/2);
             initialDoorY = mapPosDoorY*pathWidth + (pathWidth);
         }
         
-        this.mapBounds[mapPosDoorY][mapPosDoorX] = MAZE.MAP_SPACE_DOOR;
+        this.mapBounds[mapPosDoorY][mapPosDoorX] = MAZE.MAP_SPACE_DOOR; // ToDo no MAZE!
 
         this._spawnDoor(initialDoorX, initialDoorY, data.door);
 
@@ -867,7 +867,7 @@ class PlayState {
             initialKeyY = data.key.y;
         }
         else if (data.key.pos && data.key.pos === "random") {
-            let freeSpace = MAZE.getRandomSpaceByValue(this.mapBounds, MAZE.MAP_SPACE_FREE);
+            let freeSpace = MAZE.getRandomSpaceByValue(this.mapBounds, MAZE.MAP_SPACE_FREE); // ToDo no MAZE!
             initialKeyX = freeSpace.columnIndex*pathWidth + (pathWidth/2);
             initialKeyY = freeSpace.rowIndex*pathWidth + (pathWidth/2);
         }
