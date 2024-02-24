@@ -1,3 +1,10 @@
+/* Controls PlayState for a 2D Sidescroller game.
+    Assumptions:
+    + Buttons:
+        Required: Left/Right, A/B
+        Optional: Up/Down
+
+*/
 
 var touchButtonA;
 var touchButtonB;
