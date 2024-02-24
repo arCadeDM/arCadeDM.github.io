@@ -69,12 +69,13 @@ LoadingState.init = function () {
 
 // Game State 2: Preload (load game assets here):
 LoadingState.preload = function () {
-    
+
     // Level data:
-    this.game.load.json('level:0', 'data/level00.json');
-    this.game.load.json('level:1', 'data/level01.json');
-    this.game.load.json('level:2', 'data/level02.json');
-    this.game.load.json('level:3', 'data/maze002.json');
+    // ToDo: pass in game path like "/games/chip_boy_ultra_boy/"
+    this.game.load.json('level:0', '/games/chip_boy_ultra_boy/data/level00.json');
+    //this.game.load.json('level:1', '/games/chip_boy_ultra_boy/data/level01.json');
+    //this.game.load.json('level:2', '/games/chip_boy_ultra_boy/data/level02.json');
+    //this.game.load.json('level:3', '/games/chip_boy_ultra_boy/data/maze002.json');
   
     // Controls:
     this.game.load.image('controlsUp', 'img/controls/flatDark/flatDark02.png');
