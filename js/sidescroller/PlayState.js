@@ -446,7 +446,31 @@ class PlayState {
         }, this);
     }
 
+    _handleDebugInput() {
+        if (this.keys.T.isDown) {
+            if (keyPressToggleDebug) {
+                keyPressToggleDebug = false;
+                
+                if (debugLevel === maxDebugLevel) {
+                    debugLevel = 0;
+                    debugTextKeyD = "";
+                }
+                else {
+                    debugLevel++;
+                }
+            }
+        }
+        else {
+            keyPressToggleDebug = true;
+        }
+    }
+    
     _handleInput() {
+        this._handleDebugInput();
+        //this._handleHeroInput();
+    }
+    
+    _handleHeroInput() {        
         let xDir = 0;
         let heroCanMove = !this.hero.isLedgeGrabbing && !this.hero.isWallJumpPauseL && !this.hero.isWallJumpPauseR;
         if (this.keys.right.isDown) {
@@ -499,23 +523,6 @@ class PlayState {
             else {
                 this.hero.swordAttackSequence = 1;
             }
-        }
-        
-        if (this.keys.T.isDown) {
-            if (keyPressToggleDebug) {
-                keyPressToggleDebug = false;
-                
-                if (debugLevel === maxDebugLevel) {
-                    debugLevel = 0;
-                    debugTextKeyD = "";
-                }
-                else {
-                    debugLevel++;
-                }
-            }
-        }
-        else {
-            keyPressToggleDebug = true;
         }
     
         // handle jump
