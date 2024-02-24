@@ -1678,11 +1678,11 @@ class PlayState {
     
         //#endregion Debugging
 
-        hud.add(faceIcon);
-        hud.add(player1NameImg);
-        hud.add(coinIcon);
-        hud.add(coinScoreImg);
-        hud.add(this.keyIcon);
+        //hud.add(faceIcon);
+        //hud.add(player1NameImg);
+        //hud.add(coinIcon);
+        //hud.add(coinScoreImg);
+        //hud.add(this.keyIcon);
     
         hud.fixedToCamera = true;
         hud.cameraOffset.setTo(8, 8);
