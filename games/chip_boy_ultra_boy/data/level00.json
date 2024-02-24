@@ -1,11 +1,5 @@
 {
-    "maze": {
-        "level": 1,
-        "pathWidth": 160,
-        "width": 4,
-        "height": 4,
-        "levelTypeId":"lava"
-    },
+    "maze": null,
 
     "hero": {
         "id": 1,
