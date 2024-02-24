@@ -94,7 +94,7 @@ LoadingState.preload = function () {
 LoadingState.create = function () {
     //let jsonData = this.game.cache.getJSON(`level:${this.level}`);
     let jsonData = this.game.cache.getJSON(`level:0`); // ToDo: get the level number from query string;
-    this.game.state.start('play', true, false, jsonData));
+    this.game.state.start('play', true, false, jsonData);
 };
 
 // #endregion Loading State
