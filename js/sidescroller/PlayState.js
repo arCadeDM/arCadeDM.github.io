@@ -231,7 +231,7 @@ class PlayState {
         this.game.input.onDown.add(this.unpauseGame, this);
     
         // create UI score boards
-        this._createHud();
+        //this._createHud();
     }
     
     // Game State 4: Update
