@@ -210,7 +210,7 @@ class PlayState {
         this.game.camera.flash('#000000');
     
         this.game.scale.fullScreenScaleMode = Phaser.ScaleManager.SHOW_ALL;
-
+        /*
         // create sound entities
         this.sfx = {
             jump: this.game.add.audio('sfx:jump'),
@@ -221,7 +221,7 @@ class PlayState {
         };
         this.bgm = this.game.add.audio('bgm');
         this.bgm.loopFull();
-    
+        */
         // ToDo: there needs to be some initial json load that says 
         // what json should be loaded next.
         let jsonData = this.game.cache.getJSON(`level:${this.level}`);
@@ -1408,7 +1408,7 @@ class PlayState {
         this.bgDecoration = this.game.add.group();
     
         // enable gravity, from either input JSON or constant:
-        this.game.physics.arcade.gravity.y = data.gravity || 1200;
+        this.game.physics.arcade.gravity.y = (data.gravity !== 'undefined') ? data.gravity : 1200;
 
         graphicsDebug = this.game.add.graphics(0, 0);
         graphicsDebug.beginFill(0xFF00FF);
