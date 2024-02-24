@@ -64,7 +64,7 @@ class PlayState {
         }
     }
 
-    validateData(data) {
+    validateLevelJson(data) {
         return (typeof data === 'undefined')
             ? this.buildDefaultData()
             : data;
@@ -225,6 +225,7 @@ class PlayState {
         // ToDo: there needs to be some initial json load that says 
         // what json should be loaded next.
         let jsonData = this.game.cache.getJSON(`level:${this.level}`);
+        jsonData = this.validateLevelJson(jsonData);
         this._loadLevel(jsonData);
     
         this.game.input.onDown.add(this.unpauseGame, this);
