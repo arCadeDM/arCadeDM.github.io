@@ -1,77 +1,25 @@
 {
-    "maze": null,
-
-    "hero": {
-        "id": 1,
-        "pos": "farthest"
-    },
-
-    "door": {
-        "id": 1,
-        "pos": "random",
-        
-        "nextLevelIncrement": 0    
-    },
-
-    "coins": {
-        "count": 20,
-        "pos": "random"
-    },
-
-    "enemies": {
-        "sentries": {
-            "enemyType": "sentry",
-            "pos": "random",
-            "spriteSheetWalk": "demonSkeletonKnightWalk",
-            "spriteSheetAttack": "demonSkeletonKnightAttack",
-            "initialSpritesheet": "demonSkeletonKnightWalk",
-            "initialAnimation": "walk",
-            "yOffsetWalk": 40,
-            "yOffsetAttack": 32,
-            "scale": 0.6,
-            "velocityX": 22,
-
-            "aiViewX": 0,
-            "aiViewY": -10,
-            "attackRange": 60,
-            "damageBounds": {
-                 "0": {"x":110, "y": 35, "w": 63, "h": 70},
-                 "1": {"x":110, "y": 35, "w": 63, "h": 70},
-                 "2": {"x":110, "y": 35, "w": 63, "h": 70},
-                 "3": {"x":110, "y": 35, "w": 63, "h": 70},
-                 "4": {"x": 50, "y":  0, "w": 63, "h": 70},
-                 "5": {"x": 50, "y":  0, "w": 63, "h": 70},
-                 "6": {"x": 50, "y":  0, "w": 63, "h": 70},
-                 "7": {"x":170, "y": 40, "w":100, "h":220},
-                 "8": {"x":210, "y":199, "w": 70, "h": 60},
-                 "9": {"x":210, "y":199, "w": 70, "h": 60},
-                "10": {"x":210, "y":199, "w": 70, "h": 60},
-                "11": {"x":210, "y":199, "w": 70, "h": 60},
-                "12": {"x":210, "y":199, "w": 70, "h": 60},
-                "13": {"x":110, "y": 35, "w": 63, "h": 70},
-                "14": {"x":110, "y": 35, "w": 63, "h": 70},
-                "15": {"x":110, "y": 35, "w": 63, "h": 70},
-                "16": {"x":110, "y": 35, "w": 63, "h": 70},
-                "17": {"x":110, "y": 35, "w": 63, "h": 70}
-            },
-
-            "total": 4
-        }
-    },
-
-    "food": {
-        "pos": "random",
-    
-        "powerUp": "stamina",
-        "powerUpRange": "random",
-        "powerUpMin": 1,
-        "powerUpMax": 3
-    },
-
-    "key": {
-        "doorId": 1,
-        "pos": "farthest"
-    },
-
-    "gravity": 1200
+    "platforms": [
+        {"image": "ground", "x": 0, "y": 546},
+        {"image": "grass:4x1", "x": 420, "y": 420}
+    ],
+    "decoration": [
+        {"frame": 2, "x": 630, "y": 504},
+        {"frame": 2, "x": 663, "y": 504},
+        {"frame": 2, "x": 697, "y": 504},
+        {"frame": 3, "x": 756, "y": 504},
+        {"frame": 1, "x": 84, "y": 504},
+        {"frame": 0, "x": 252, "y": 504},
+        {"frame": 4, "x": 462, "y": 378}
+    ],
+    "coins": [
+        {"x": 147, "y": 525}, {"x": 189, "y": 525},
+        {"x": 399, "y": 399}, {"x": 357, "y": 420}, {"x": 336, "y": 462},
+        {"x": 819, "y": 525}, {"x": 861, "y": 525}, {"x": 903, "y": 525}
+    ],
+    "hero": {"x": 100, "y": 200},
+    "spiders": [
+    ],
+    "door": {"x": 231, "y": 546},
+    "key": {"x": 525, "y": 336}
 }
