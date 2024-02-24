@@ -786,8 +786,8 @@ class PlayState {
         // consolidated off the original 2D array maze:  
         //this.boundingBoxes = MAZE.buildBoundingBoxes(this.mapBounds, this.wall); // ToDo no MAZE!
 
-        this.mapBoundsTiles = this._buildMazeTileGroups(this.boundingBoxes);
-        
+        //this.mapBoundsTiles = this._buildMazeTileGroups(this.boundingBoxes);
+        /*
         this.boundingBoxes.forEach(function (bbox) {
             var landItemBound = this.game.add.sprite(bbox.x, bbox.y);
             landItemBound.width = bbox.w;
@@ -811,9 +811,10 @@ class PlayState {
                 bbox.h - 64);
             this.landscapeBounds.add(landItemBound);
         }, this);
-    
+        */
+        
         //this.itemsFood = this.game.add.group();
-        this["itemsFood"] = this.game.add.group();
+        //this["itemsFood"] = this.game.add.group();
         // data.itemsFood.forEach(function (food) {
         //     this.itemsFood.add(
         //         this.game.add.image(food.x, food.y, 'food', food.frame)
@@ -821,7 +822,7 @@ class PlayState {
         // }, this);
     
         //#region Door
-
+        /*
         let initialDoorX = 0;
         let initialDoorY = 0;
         let mapPosDoorX = 0;
@@ -850,11 +851,12 @@ class PlayState {
         this.mapBounds[mapPosDoorY][mapPosDoorX] = MAZE.MAP_SPACE_DOOR; // ToDo no MAZE!
 
         this._spawnDoor(initialDoorX, initialDoorY, data.door);
-
+        */
+        
         //#endregion Door
         
         //#region Key
-
+        /*
         let initialKeyX = 0;
         let initialKeyY = 0;
         let mapPosKeyX = 0;
@@ -888,11 +890,11 @@ class PlayState {
         this.mapBounds[mapPosKeyY][mapPosKeyX] = MAZE.MAP_SPACE_KEY;
 
         this._spawnKey(initialKeyX, initialKeyY);
-
+        */
         //#endregion Key
         
         //#region Hero
-
+        /*
         let initialHeroX = 0;
         let initialHeroY = 0;
         if (
@@ -947,11 +949,11 @@ class PlayState {
         hero2.addAnimations(heroAnimations);
         this.hero = hero2
         this.game.add.existing(this.hero);
-
+        */
         //#endregion Hero
         
         //#region Enemies
-        
+        /*
         let badGuyBuilder = new EnemyFactory(this.game);        
         for (var badGuyEntry in data.enemies) {
             let badGuyData = data.enemies[badGuyEntry];
@@ -968,11 +970,11 @@ class PlayState {
                 this.enemies.add(enemySprite);
             }
         };
-
+        */
         //#endregion Enemies
         
         //#region Coins
-
+        /*
         if (data.coins) {
             if (typeof data.coins.pos !== 'undefined' && data.coins.pos === "random") {
                 this.coinTotalAvailable = (typeof data.coins.count !== 'undefined') ? data.coins.count : 0;
@@ -991,21 +993,9 @@ class PlayState {
                 }
             }
         }
-
+        */
         //#endregion Coins
     }
-
-    _EnemyMovementSentry() {
-        // check against walls and reverse direction if necessary:
-        if (this.body.touching.right || this.body.blocked.right) {
-            this.scale.x *= -1;
-            this.body.velocity.x = -1 * this.body.speed; // turn left
-        }
-        else if (this.body.touching.left || this.body.blocked.left) {
-            this.scale.x *= -1;
-            this.body.velocity.x = this.body.speed; // turn right
-        }
-    };
     
     _getEnemyMapPosition(badGuyJson) {
         let enemySpace = null;
