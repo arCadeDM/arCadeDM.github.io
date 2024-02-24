@@ -72,16 +72,16 @@ class PlayState {
 
     buildDefaultData() {
         return {
-            level: 0;
-            gravity: 1200;
-            maze: undefined;
+            level: 0,
+            gravity: 1200,
+            maze: undefined,
 
             decoration: [
 
-            ];
+            ],
             platforms: [
 
-            ];
+            ],
         };
     }
     
