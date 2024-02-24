@@ -237,9 +237,9 @@ class PlayState {
     // Game State 4: Update
     update() {
         this._updateFps();
-        this._renderTiles(this.boundingBoxes, this.mapBoundsTiles);
-        this._handleCollisions();
-        this._handleEnemyAI(this.hero);
+        //this._renderTiles(this.boundingBoxes, this.mapBoundsTiles);
+        //this._handleCollisions();
+        //this._handleEnemyAI(this.hero);
         this._handleInput();
         this._setDebugLevels();
     }
