@@ -78,17 +78,17 @@ LoadingState.preload = function () {
     //this.game.load.json('level:3', '/games/chip_boy_ultra_boy/data/maze002.json');
   
     // Controls:
-    this.game.load.image('controlsUp', 'img/controls/flatDark/flatDark02.png');
-    this.game.load.image('controlsDown', 'img/controls/flatDark/flatDark09.png');
-    this.game.load.image('controlsLeft', 'img/controls/flatDark/flatDark23.png');
-    this.game.load.image('controlsRight', 'img/controls/flatDark/flatDark24.png');
-    this.game.load.image('controlsPadCircle', 'img/controls/flatDark/flatDark06.png');
-    this.game.load.image('controlsDPad', 'img/controls/flatDark/flatDark03.png');
-    this.game.load.image('touchButtonA', 'img/controls/flatDark/flatDark35.png');
-    this.game.load.image('touchButtonB', 'img/controls/flatDark/flatDark36.png');
-    this.game.load.image('controlsFullScreen', 'img/controls/flatDark/flatDark29.png');
-    this.game.load.image('controlsFullScreenExit', 'img/controls/flatDark/flatDark34.png');
-    this.game.load.image('controlsSettings', 'img/controls/flatDark/flatDark13.png');
+    this.game.load.image('controlsUp', '/img/controls/flatDark/flatDark02.png');
+    this.game.load.image('controlsDown', '/img/controls/flatDark/flatDark09.png');
+    this.game.load.image('controlsLeft', '/img/controls/flatDark/flatDark23.png');
+    this.game.load.image('controlsRight', '/img/controls/flatDark/flatDark24.png');
+    this.game.load.image('controlsPadCircle', '/img/controls/flatDark/flatDark06.png');
+    this.game.load.image('controlsDPad', '/img/controls/flatDark/flatDark03.png');
+    this.game.load.image('touchButtonA', '/img/controls/flatDark/flatDark35.png');
+    this.game.load.image('touchButtonB', '/img/controls/flatDark/flatDark36.png');
+    this.game.load.image('controlsFullScreen', '/img/controls/flatDark/flatDark29.png');
+    this.game.load.image('controlsFullScreenExit', '/img/controls/flatDark/flatDark34.png');
+    this.game.load.image('controlsSettings', '/img/controls/flatDark/flatDark13.png');
 };
 
 LoadingState.create = function () {
