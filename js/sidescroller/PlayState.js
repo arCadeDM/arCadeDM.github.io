@@ -1533,15 +1533,16 @@ class PlayState {
         let iconRowHeight = 48;
         let initialHeight = 15;
 
-        let faceHeight = (0 * iconRowHeight) + initialHeight;
-        let faceIcon = this.game.make.image(3, faceHeight, 'icon:player1');
-        faceIcon.anchor.set(0, 0.5);
-        faceIcon.frame = 3;
+        //let faceHeight = (0 * iconRowHeight) + initialHeight;
+        //let faceIcon = this.game.make.image(3, faceHeight, 'icon:player1');
+        //faceIcon.anchor.set(0, 0.5);
+        //faceIcon.frame = 3;
 
-        let player1NameImg = this.game.make.image(faceIcon.width + 10, faceHeight + 2, player1Font);
-        player1NameImg.anchor.set(0, 0.5);
+        //let player1NameImg = this.game.make.image(faceIcon.width + 10, faceHeight + 2, player1Font);
+        //player1NameImg.anchor.set(0, 0.5);
         player1Font.text = "PLAYER 1";
 
+        /*
         this.coinFont = this.game.add.retroFont('fonts:x05mo', 20, 20, ALPHANUMERIC, 15);
         this._updateCoinText();
 
@@ -1555,7 +1556,7 @@ class PlayState {
         let keyHeight = coinHeight + 41;
         this.keyIcon = this.game.make.image(2, keyHeight, 'icon:key');
         this.keyIcon.anchor.set(0, 0.5);
-
+        */
         //#endregion Upper Left
 
         if (this.isMobile === true) {
