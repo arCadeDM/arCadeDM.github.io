@@ -69,30 +69,31 @@ LoadingState.init = function () {
 
 // Game State 2: Preload (load game assets here):
 LoadingState.preload = function () {
+    
+    // Level data:
+    this.game.load.json('level:0', 'data/level00.json');
+    this.game.load.json('level:1', 'data/level01.json');
+    this.game.load.json('level:2', 'data/level02.json');
+    this.game.load.json('level:3', 'data/maze002.json');
   
     // Controls:
-    this.game.load.image('controlsUp', 'images/controls/flatDark/flatDark02.png');
-    this.game.load.image('controlsDown', 'images/controls/flatDark/flatDark09.png');
-    this.game.load.image('controlsLeft', 'images/controls/flatDark/flatDark23.png');
-    this.game.load.image('controlsRight', 'images/controls/flatDark/flatDark24.png');
-    this.game.load.image('controlsPadCircle', 'images/controls/flatDark/flatDark06.png');
-    this.game.load.image('controlsDPad', 'images/controls/flatDark/flatDark03.png');
-    this.game.load.image('touchButtonA', 'images/controls/flatDark/flatDark35.png');
-    this.game.load.image('touchButtonB', 'images/controls/flatDark/flatDark36.png');
-    this.game.load.image('controlsFullScreen', 'images/controls/flatDark/flatDark29.png');
-    this.game.load.image('controlsFullScreenExit', 'images/controls/flatDark/flatDark34.png');
-    this.game.load.image('controlsSettings', 'images/controls/flatDark/flatDark13.png');
-  
-    // Level data:
-    //this.game.load.json('level:0', 'data/level00.json');
-    //this.game.load.json('level:1', 'data/level01.json');
-    //this.game.load.json('level:2', 'data/level02.json');
-    //this.game.load.json('level:3', 'data/maze002.json');
-
+    this.game.load.image('controlsUp', 'img/controls/flatDark/flatDark02.png');
+    this.game.load.image('controlsDown', 'img/controls/flatDark/flatDark09.png');
+    this.game.load.image('controlsLeft', 'img/controls/flatDark/flatDark23.png');
+    this.game.load.image('controlsRight', 'img/controls/flatDark/flatDark24.png');
+    this.game.load.image('controlsPadCircle', 'img/controls/flatDark/flatDark06.png');
+    this.game.load.image('controlsDPad', 'img/controls/flatDark/flatDark03.png');
+    this.game.load.image('touchButtonA', 'img/controls/flatDark/flatDark35.png');
+    this.game.load.image('touchButtonB', 'img/controls/flatDark/flatDark36.png');
+    this.game.load.image('controlsFullScreen', 'img/controls/flatDark/flatDark29.png');
+    this.game.load.image('controlsFullScreenExit', 'img/controls/flatDark/flatDark34.png');
+    this.game.load.image('controlsSettings', 'img/controls/flatDark/flatDark13.png');
 };
 
 LoadingState.create = function () {
-    this.game.state.start('play', true, false, {level: 3});
+    //let jsonData = this.game.cache.getJSON(`level:${this.level}`);
+    let jsonData = this.game.cache.getJSON(`level:0`); // ToDo: get the level number from query string;
+    this.game.state.start('play', true, false, jsonData));
 };
 
 // #endregion Loading State
