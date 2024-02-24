@@ -109,7 +109,7 @@ class PlayState {
     
         this.hasCheese = false;
 
-        data = this.validateData(data);
+        data = this.validateLevelJson(data);
         
         this.level = (typeof data !== 'undefined' && typeof data.level !== 'undefined') 
             ? data.level : 0;
