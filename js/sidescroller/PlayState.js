@@ -785,222 +785,6 @@ class PlayState {
         }, this);
     }
     
-    _setMazeDataFromJson(data) {
-        let pathWidth = (data.maze.pathWidth) ? data.maze.pathWidth : 128; // Width of the maze path;
-        let width = (data.maze.width) ? data.maze.width : 3; // Game width;
-        let height = (data.maze.height) ? data.maze.height : 2; // Game height;
-        let boundW = (pathWidth * width * 2) + (pathWidth * 3);
-        let boundH = (pathWidth * height * 2) + (pathWidth * 3);
-        this.game.world.setBounds(0, 0, boundW, boundH);
-        this.wall = pathWidth; // Width of the walls between paths;    
-        
-        graphics = this.game.add.graphics(0, 0);
-        graphics.beginFill(0x171c23); // ToDo: this color should come from JSON based on the tileset.
-
-        // 2D array where values correspond to free-space or wall:
-        //this.mapBounds = MAZE.buildMap(width, height, true); // ToDo no MAZE!
-        
-        // Collection of bounding box rectangles, 
-        // consolidated off the original 2D array maze:  
-        //this.boundingBoxes = MAZE.buildBoundingBoxes(this.mapBounds, this.wall); // ToDo no MAZE!
-
-        //this.mapBoundsTiles = this._buildMazeTileGroups(this.boundingBoxes);
-        /*
-        this.boundingBoxes.forEach(function (bbox) {
-            var landItemBound = this.game.add.sprite(bbox.x, bbox.y);
-            landItemBound.width = bbox.w;
-            landItemBound.height = bbox.h;
-            this.game.physics.enable(landItemBound);
-            landItemBound.body.allowGravity = false;
-            landItemBound.body.immovable = true;
-    
-            // ToDo: determine these dynamically:
-            landItemBound.grab = false;
-            landItemBound.wallJump = true;
-            
-            //this.game.debug.body(landItemBound);
-            //landItemBound.tint = Math.random() * 0xffffff;
-            landItemBound.tint = 0x171c23;
-            graphics.lineStyle(4, 0x171c23, 1);
-            graphics.drawRect(
-                bbox.x + this.tileWidth, 
-                bbox.y + this.tileWidth, 
-                bbox.w - (2*this.tileWidth), 
-                bbox.h - 64);
-            this.landscapeBounds.add(landItemBound);
-        }, this);
-        */
-        
-        //this.itemsFood = this.game.add.group();
-        //this["itemsFood"] = this.game.add.group();
-        // data.itemsFood.forEach(function (food) {
-        //     this.itemsFood.add(
-        //         this.game.add.image(food.x, food.y, 'food', food.frame)
-        //     );
-        // }, this);
-    
-        //#region Door
-        /*
-        let initialDoorX = 0;
-        let initialDoorY = 0;
-        let mapPosDoorX = 0;
-        let mapPosDoorY = 0;
-        let nodesWithWallUnderneath = null;
-    
-        if (
-            (data.door.pos && data.door.pos === "fixed") ||
-            (data.door.x || data.door.y || data.door.x32 || data.door.y32)
-        ) {
-            initialDoorX = data.door.x;
-            initialDoorY = data.door.y;
-        }
-        else if (data.door.pos && data.door.pos === "random") {
-            nodesWithWallUnderneath = MAZE.getNodesWithWallUnderneath(this.mapBounds); // ToDo no MAZE!
-    
-            // The space 1 below (move 0 x spaces, move down 1 y space) needs to be a wall:
-            let requireBorderUnderneath = [ { "x": 0, "y": 1, "spaceValue": MAZE.MAP_SPACE_WALL } ]; // ToDo no MAZE!
-            let freeSpace = MAZE.getRandomSpaceByValue(this.mapBounds, MAZE.MAP_SPACE_FREE, requireBorderUnderneath); // ToDo no MAZE!
-            mapPosDoorX = freeSpace.columnIndex;
-            mapPosDoorY = freeSpace.rowIndex;
-            initialDoorX = mapPosDoorX*pathWidth + (pathWidth/2);
-            initialDoorY = mapPosDoorY*pathWidth + (pathWidth);
-        }
-        
-        this.mapBounds[mapPosDoorY][mapPosDoorX] = MAZE.MAP_SPACE_DOOR; // ToDo no MAZE!
-
-        this._spawnDoor(initialDoorX, initialDoorY, data.door);
-        */
-        
-        //#endregion Door
-        
-        //#region Key
-        /*
-        let initialKeyX = 0;
-        let initialKeyY = 0;
-        let mapPosKeyX = 0;
-        let mapPosKeyY = 0;
-        if (
-            (data.key.pos && data.key.pos === "fixed") ||
-            (data.key.x || data.key.y || data.key.x32 || data.key.y32)
-        ) {
-            initialKeyX = data.key.x;
-            initialKeyY = data.key.y;
-        }
-        else if (data.key.pos && data.key.pos === "random") {
-            let freeSpace = MAZE.getRandomSpaceByValue(this.mapBounds, MAZE.MAP_SPACE_FREE); // ToDo no MAZE!
-            initialKeyX = freeSpace.columnIndex*pathWidth + (pathWidth/2);
-            initialKeyY = freeSpace.rowIndex*pathWidth + (pathWidth/2);
-        }
-        else if (data.key.pos && data.key.pos === "farthest") {
-            let aStarResult = MAZE.getFarthestFreeSpace(
-                this.mapBounds, 
-                new GridNode(mapPosDoorX, mapPosDoorY, MAZE.MAP_SPACE_FREE)
-            );
-            // The astar lib off of github swaps the x and y on the nodes;
-            // this corrects that by assigning x to the key's y and y to the key's x:
-            mapPosKeyX = aStarResult.y;
-            mapPosKeyY = aStarResult.x;
-            
-            initialKeyX = mapPosKeyX*pathWidth + (pathWidth/2);
-            initialKeyY = mapPosKeyY*pathWidth + (pathWidth/2);
-        }
-        
-        this.mapBounds[mapPosKeyY][mapPosKeyX] = MAZE.MAP_SPACE_KEY;
-
-        this._spawnKey(initialKeyX, initialKeyY);
-        */
-        //#endregion Key
-        
-        //#region Hero
-        /*
-        let initialHeroX = 0;
-        let initialHeroY = 0;
-        if (
-            (data.hero.pos && data.hero.pos === "fixed") ||
-            (data.hero.x || data.hero.y || data.hero.x32 || data.hero.y32)
-        ) {
-            initialHeroX = (data.hero.x32 >= 0 ? data.hero.x32 * this.tileWidth : data.hero.x);
-            initialHeroY = (data.hero.y32 >= 0 ? data.hero.y32 * this.tileWidth : data.hero.y);
-        }
-        else if (data.hero.pos && data.hero.pos === "random") {
-            let requireBorderUnderneath = [ { "x": 0, "y": 1, "spaceValue": MAZE.MAP_SPACE_WALL } ];
-            let freeSpace = MAZE.getRandomSpaceByValue(this.mapBounds, MAZE.MAP_SPACE_FREE, requireBorderUnderneath);
-            initialHeroX = freeSpace.columnIndex*pathWidth + (pathWidth/2);
-            initialHeroY = freeSpace.rowIndex*pathWidth + (pathWidth/4);
-        }
-        else if (data.hero.pos && data.hero.pos === "farthest") {
-            if (nodesWithWallUnderneath === null) {
-                nodesWithWallUnderneath = MAZE.getNodesWithWallUnderneath(this.mapBounds);
-            }
-            let heroNode = MAZE.getFarthestFreeSpaceTriangle(
-                this.mapBounds,
-                new GridNode(mapPosDoorX, mapPosDoorY, MAZE.MAP_SPACE_FREE),
-                new GridNode(mapPosKeyX, mapPosKeyY, MAZE.MAP_SPACE_FREE),
-                nodesWithWallUnderneath
-            );
-            initialHeroX = heroNode.y*pathWidth + (pathWidth/2);
-            initialHeroY = heroNode.x*pathWidth + (pathWidth/4);
-        }
-        */
-        
-        // ToDo ES6: load this from JSON. This should be game-specific data, not hardcoded.
-        // animations ('name', [frames], fps, looped?)
-        let player1Animations = [
-            new animationData('animationHeroIdle', [0, 0, 0, 0], 4, true)
-        ];
-
-        let p1 = new PlayableCharacter(this.game, initialHeroX, initialHeroY, 'hero');
-        p1.addAnimations(player1Animations);
-        this.hero = p1
-        this.game.add.existing(this.hero);
-        
-        //#endregion Hero
-        
-        //#region Enemies
-        /*
-        let badGuyBuilder = new EnemyFactory(this.game);        
-        for (var badGuyEntry in data.enemies) {
-            let badGuyData = data.enemies[badGuyEntry];
-            let repeatEnemy = (typeof badGuyData.total !== 'undefined' ? badGuyData.total : 1)
-            for (var rep = 1; rep <= repeatEnemy; rep++) {
-                let enemySpace = this._getEnemyMapPosition(badGuyData);
-                this.mapBounds[enemySpace.rowIndex][enemySpace.columnIndex] = MAZE.MAP_SPACE_ENEMY;
-                let enemyGameX = enemySpace.columnIndex*pathWidth + (pathWidth/2);
-                let enemyGameY = enemySpace.rowIndex*pathWidth + (pathWidth/2) + badGuyData.yOffsetWalk;
-                let enemySprite = badGuyBuilder.createEnemySprite(badGuyData, enemyGameX, enemyGameY);
-                enemySprite.update = this._EnemyMovementSentry;
-                enemySprite.yOffsetWalk = badGuyData.yOffsetWalk;
-                enemySprite.yOffsetAttack = badGuyData.yOffsetAttack;
-                this.enemies.add(enemySprite);
-            }
-        };
-        */
-        //#endregion Enemies
-        
-        //#region Coins
-        /*
-        if (data.coins) {
-            if (typeof data.coins.pos !== 'undefined' && data.coins.pos === "random") {
-                this.coinTotalAvailable = (typeof data.coins.count !== 'undefined') ? data.coins.count : 0;
-                for (var cc = 0; cc < this.coinTotalAvailable; cc++) {
-                    let freeSpace = MAZE.getRandomSpaceByValue(this.mapBounds, MAZE.MAP_SPACE_FREE);
-                    if (freeSpace.columnIndex === null) {
-                        // There's no more free spaces!
-                        break;
-                    }
-                    mapPosDoorX = freeSpace.columnIndex;
-                    mapPosDoorY = freeSpace.rowIndex;
-                    this.mapBounds[mapPosDoorY][mapPosDoorX] = MAZE.MAP_SPACE_COIN;
-                    let coinGameX = mapPosDoorX*pathWidth + (pathWidth/2);
-                    let coinGameY = mapPosDoorY*pathWidth + (pathWidth/2);
-                    this._spawnCoin(coinGameX, coinGameY);
-                }
-            }
-        }
-        */
-        //#endregion Coins
-    }
-    
     _getEnemyMapPosition(badGuyJson) {
         let enemySpace = null;
         if (badGuyJson.pos === "random") {
@@ -1394,7 +1178,7 @@ class PlayState {
         // spawn hero
         let initialHeroX = (data.hero.x32 >= 0 ? data.hero.x32 * this.tileWidth : data.hero.x);
         let initialHeroY = (data.hero.y32 >= 0 ? data.hero.y32 * this.tileWidth : data.hero.y);
-        this.hero = new PlayableCharacter(this.game, initialHeroX, initialHeroY);
+        this.hero = new PlayableCharacter(this.game, initialHeroX, initialHeroY, 'hero');
         this.game.add.existing(this.hero);
         
     }
@@ -1425,22 +1209,17 @@ class PlayState {
         //graphicsDebugEnemy.beginFill(0xFF00FF);
         //graphicsDebugEnemy.lineStyle(4, 0xFF00FF, 1);
         
-        if (data.maze) {
-            this._setMazeDataFromJson(data);
-        }
-        else {
-            // spawn platforms
-            data.platforms.forEach(this._spawnPlatform, this);
-    
-            // spawn level decoration
-            data.decoration.forEach(function (deco) {
-                this.bgDecoration.add(
-                    this.game.add.image(deco.x, deco.y, 'decoration', deco.frame)
-                );
-            }, this);
-    
-            this._setLevelDataFromJson(data);
-        }
+        // spawn platforms
+        data.platforms.forEach(this._spawnPlatform, this);
+
+        // spawn level decoration
+        data.decoration.forEach(function (deco) {
+            this.bgDecoration.add(
+                this.game.add.image(deco.x, deco.y, 'decoration', deco.frame)
+            );
+        }, this);
+
+        this._setLevelDataFromJson(data);
     
         this.game.camera.follow(this.hero);
     }
