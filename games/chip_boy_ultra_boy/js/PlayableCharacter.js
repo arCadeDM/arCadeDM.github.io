@@ -102,7 +102,7 @@ class PlayableCharacter extends Phaser.Sprite {
                   }, this
               );
           }
-          if (animationName in heroAnimationDimensions) {
+          if (typeof heroAnimationDimensions !== 'undefined' && animationName in heroAnimationDimensions) {
               let nonStandard = heroAnimationDimensions[animationName];
               this.body.setSize(
                   nonStandard.w, 
