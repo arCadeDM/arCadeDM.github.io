@@ -149,7 +149,9 @@ class PlayState {
         //controlsSettings
     
         this.game.paused = true;
-    
+
+        // ToDo: what is this?
+        /*
         // Hide the existing A button and draw a temp one:
         touchButtonA.alpha = 0;
         touchButtonB.alpha = 0;
@@ -164,7 +166,7 @@ class PlayState {
         touchButtonACustom.scale.setTo(buttonScale, buttonScale);
         //touchButtonACustom.events.onInputDown.add(touchButtonAPress, this);
         //touchButtonACustom.events.onInputUp.add(touchButtonARelease, this);
-    
+        */
     
         // Then add the menu
         //menu = game.add.sprite(w/2, h/2, 'menu');
@@ -234,7 +236,8 @@ class PlayState {
         let jsonData = this.game.cache.getJSON(`level:${this.level}`);
         jsonData = this.validateLevelJson(jsonData);
         this._loadLevel(jsonData);
-    
+
+        // ToDo: what is this? Is this because the game was paused to load everything, and once it's all loaded we unpause?
         this.game.input.onDown.add(this.unpauseGame, this);
     
         // create UI score boards
@@ -306,7 +309,6 @@ class PlayState {
         // let line1 = new Phaser.Line(10, 10, 500, 500);
         // this.game.debug.geom(line1);
         // this.game.debug.lineInfo(line1, 32, 32);
-
         
     }
     
@@ -1041,12 +1043,14 @@ class PlayState {
                     if (tileFrame !== null) {
                         let gameX = bbox.x + bX;
                         let gameY = bbox.y + bY;
+                        /*
                         if (tileFrame === FRAME_TOP_LEFT) {
                             this._spawnEnemyWall(gameX, gameY, 'left')
                         }
                         else if (tileFrame === FRAME_TOP_RIGHT) {
                             this._spawnEnemyWall(gameX + this.tileWidth, gameY, 'right')
                         }
+                        */
                         bboxGroup.add(this.game.add.image(
                             gameX, gameY, 'landscape', tileFrame)
                         );
@@ -1062,6 +1066,7 @@ class PlayState {
         return mazeTileGroups;
     }
 
+    /*
     getMazeTileFrame(bX, bY, bbox) {
         let tileFrame = null;
         
@@ -1120,7 +1125,8 @@ class PlayState {
         }
         return tileFrame;
     }
-
+    */
+    
     getWallTileFrame(iMapCol, iMapRow, iTileIndexX, iTileIndexY) {
         // ToDo: default to center on desktop and null on mobile.
         // This will reduce sprites on mobile and improve render speed.
@@ -1467,10 +1473,11 @@ class PlayState {
         sprite.body.immovable = true;
     
         // spawn invisible walls at each side, only detectable by enemies
-        this._spawnEnemyWall(platform.x, platform.y, 'left');
-        this._spawnEnemyWall(platform.x + sprite.width, platform.y, 'right');
+        //this._spawnEnemyWall(platform.x, platform.y, 'left');
+        //this._spawnEnemyWall(platform.x + sprite.width, platform.y, 'right');
     }
-    
+
+    /*
     _spawnEnemyWall(x, y, side) {
         let sprite = this.enemyWalls.create(x, y, 'invisible-wall');
         sprite.alpha = 0;
@@ -1482,7 +1489,9 @@ class PlayState {
         sprite.body.immovable = true;
         sprite.body.allowGravity = false;
     }
+    */
 
+    /*
     _spawnCoin(coinX, coinY) {
         let sprite = this.coins.create(coinX, coinY, 'coin');
         sprite.anchor.set(0.5, 0.5);
@@ -1495,7 +1504,9 @@ class PlayState {
         sprite.animations.add('rotate', [0, 1, 2, 1], 6, true); // 6fps, looped
         sprite.animations.play('rotate');
     }
-    
+    */
+
+    /*
     _spawnKey(x, y) {
         this.key = this.bgDecoration.create(x, y, 'key');
         this.key.anchor.set(0.5, 0.5);
@@ -1511,7 +1522,9 @@ class PlayState {
             .loop()
             .start();
     }
-    
+    */
+
+    /*
     _spawnDoor(x, y, doorData) {
         this.door = this.bgDecoration.create(x, y, 'door');
         this.door.anchor.setTo(0.5, 1);
@@ -1523,6 +1536,7 @@ class PlayState {
             }
         }
     }
+    */
 
     _createHud() {
         let hud = this.game.add.group();
