@@ -941,33 +941,19 @@ class PlayState {
             initialHeroX = heroNode.y*pathWidth + (pathWidth/2);
             initialHeroY = heroNode.x*pathWidth + (pathWidth/4);
         }
-    
+        */
+        
         // ToDo ES6: load this from JSON. This should be game-specific data, not hardcoded.
         // animations ('name', [frames], fps, looped?)
-        let heroAnimations = [
-            new animationData('animationHeroIdle', [0, 0, 0, 0, 0, 1, 2, 3, 0, 0, 0, 0], 4, true),
-            new animationData('animationHeroCrouch', [4, 4, 4, 4, 4, 5, 6, 7, 4, 4, 4, 4], 4, true),
-            new animationData('animationHeroRun', [8, 9, 10, 11, 12, 13], 8, true),
-            new animationData('animationHeroRunSword', [96, 97, 98, 99, 100, 101], 8, true),
-            new animationData('animationHeroSliding', [24, 25, 26, 27], 8, false), // ToDo: add 28 is initial in-between;
-            new animationData('animationHeroLedgeGrab', [29, 30, 31, 30], 2, true),
-            new animationData('animationHeroLedgePullup', [33, 34, 35, 36, 37], 8, false),
-            new animationData('animationHeroWallJumpPause', [79, 80], 4, true),
-            new animationData('animationHeroJump', [14, 15, 16, 17], 12, false),// ToDo: loop last few frames of these 2 and split them so they're the initial action then the loop.
-            new animationData('animationHeroJumpExtra', [18, 19, 20, 21], 12, true),
-            new animationData('animationHeroFall', [17, 22, 23], 8, false),
-            new animationData('animationHeroSwordDraw', [70, 71, 72, 38], 8, false),
-            new animationData('animationHeroSwordIdle', [38, 38, 38, 38, 38, 39, 40, 41, 38, 38, 38, 38], 4, true),
-            new animationData('animationHeroSwordAttack1', [53,54,55,56,57,58], 8, false),
-            new animationData('animationHeroSwordAttack2', [53,54,55,56,57,58], 8, false),
-            new animationData('animationHeroDying', [62,63,64,65,66,67,68,68,68], 8, false)
+        let player1Animations = [
+            new animationData('animationHeroIdle', [0, 0, 0, 0], 4, true)
         ];
 
-        let hero2 = new Hero2(this.game, initialHeroX, initialHeroY, 'hero');
-        hero2.addAnimations(heroAnimations);
-        this.hero = hero2
+        let p1 = new Hero2(this.game, initialHeroX, initialHeroY, 'player1');
+        p1.addAnimations(player1Animations);
+        this.hero = p1
         this.game.add.existing(this.hero);
-        */
+        
         //#endregion Hero
         
         //#region Enemies
