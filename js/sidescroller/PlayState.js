@@ -949,7 +949,7 @@ class PlayState {
             new animationData('animationHeroIdle', [0, 0, 0, 0], 4, true)
         ];
 
-        let p1 = new PlayableCharacter(this.game, initialHeroX, initialHeroY, 'player1');
+        let p1 = new PlayableCharacter(this.game, initialHeroX, initialHeroY, 'hero');
         p1.addAnimations(player1Animations);
         this.hero = p1
         this.game.add.existing(this.hero);
