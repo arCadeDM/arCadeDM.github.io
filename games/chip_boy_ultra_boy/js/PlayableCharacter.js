@@ -1,5 +1,10 @@
 const ANIMATION_HERO_IDLE = 'animationHeroIdle'; 
 
+const HERO_DEFAULT_SIZE_WIDTH = 40;
+const HERO_DEFAULT_SIZE_HEIGHT = 72;
+const HERO_DEFAULT_SIZE_OFFSET_X = 32;
+const HERO_DEFAULT_SIZE_OFFSET_Y = 0;
+
 var heroAnimationDimensions = {}; 
 
 class PlayableCharacter extends Phaser.Sprite {
