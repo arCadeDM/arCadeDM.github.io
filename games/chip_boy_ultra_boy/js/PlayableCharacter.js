@@ -1,5 +1,7 @@
 const ANIMATION_HERO_IDLE = 'animationHeroIdle'; 
 
+var heroAnimationDimensions = {}; 
+
 class PlayableCharacter extends Phaser.Sprite {
   constructor(game, x, y, spriteName) {
         super(game, x + 40, y, spriteName);
