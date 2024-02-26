@@ -1176,9 +1176,14 @@ class PlayState {
         }*/
 
         // spawn hero
+        let heroAnimations = [
+            new animationData('animationHeroIdle', [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11], 4, true)
+        ];
         let initialHeroX = (data.hero.x32 >= 0 ? data.hero.x32 * this.tileWidth : data.hero.x);
         let initialHeroY = (data.hero.y32 >= 0 ? data.hero.y32 * this.tileWidth : data.hero.y);
-        this.hero = new PlayableCharacter(this.game, initialHeroX, initialHeroY, 'chip_spritesheet');
+        let p1 = new PlayableCharacter(this.game, initialHeroX, initialHeroY, 'chip_spritesheet');
+        p1.addAnimations(heroAnimations);
+        this.hero = p1;
         this.game.add.existing(this.hero);
         
     }
