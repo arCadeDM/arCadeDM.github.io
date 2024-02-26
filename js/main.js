@@ -70,8 +70,8 @@ LoadingState.init = function () {
 // Game State 2: Preload (load game assets here):
 LoadingState.preload = function () {
 
-    this.game.load.spritesheet('hero', '/games/chip_boy_ultra_boy/images/adventurer-1.3.2-transparent.png', 
-        100, 72, 104);
+    this.game.load.spritesheet('chip_spritesheet', '/games/chip_boy_ultra_boy/images/chip_spritesheet.png', 
+        32, 32, 12);
         
     // Level data:
     // ToDo: pass in game path like "/games/chip_boy_ultra_boy/"
