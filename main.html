@@ -34,8 +34,14 @@
       width: 120px;
   
       padding: 10px;
-      border: 10px solid Orange;
       margin: 10px;
+
+      .playable {
+        border: 10px solid Orange;
+      }
+      .comingSoon {
+        border: 10px solid Gray;
+      }      
     }
     img {
         width: 150px;
@@ -55,14 +61,19 @@
     <div class="headerBig">ARCADE</div>
   </div>
   
-  <div class="item" onclick="window.location.href='/games/chip_boy_ultra_boy/cbub.html'" >
+  <div class="item, playable" onclick="window.location.href='/games/chip_boy_ultra_boy/cbub.html'" >
     <img src="/img/chip_boy.png"/>
     <span class="caption">CHIP BOY & ULTRA BOY</span>
   </div>
 
-  <div class="item">
+  <div class="item, comingSoon">
     <img src="/img/icon_lock_small.png"/>
-    <span class="caption">Coming Soon</span>
+    <span class="caption">Coming Soon: Dragon Hunter</span>
+  </div>
+
+  <div class="item, comingSoon">
+    <img src="/img/icon_lock_small.png"/>
+    <span class="caption">Coming Soon: Space Race</span>
   </div>
   
 </body>
