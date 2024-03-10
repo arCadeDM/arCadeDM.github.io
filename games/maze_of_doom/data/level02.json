@@ -1,0 +1,45 @@
+{
+    "platforms": [
+        
+    ],
+    "landscape": [
+        {"desc": "ground", "frame": 55, 
+            "x32": 0, "y32": 17, "repeatX":64},
+
+        {"desc": "platform3a", "framesX": [102, 103, 104], 
+            "x32": 4, "y32": 4, "repeatX": 2,
+            "grab": true },
+        {"desc": "platform3b", "framesX": [102, 103, 104], 
+            "x32": 4, "y32": 8, "repeatX": 2,
+            "grab": true },
+
+        {"desc":"flat1", "frame": 183, "x32": 8, "y32": 7,
+            "cU": true, "cD": false, "cL": false, "cR": false },
+        {"desc":"flat2", "frame": 183, "x32": 8, "y32": 11,
+            "cU": true, "cD": false, "cL": false, "cR": false },
+
+        {"desc": "LVertical", "framesY": [323, 367, 367], 
+            "x32": 15, "y32": 9, "repeatY": 2, 
+            "grab": true, "wallJump": true }, 
+        {"desc": "LHorizontal", "framesX": [324, 325], 
+            "x32": 16, "y32": 9, "repeatX": 1, 
+            "grab": true}, 
+        
+        {"desc": "columnLeft", "frame": 141, "x32": 22, "y32": 4, 
+            "repeatY":11, "grab": true, "wallJump": true },
+        {"desc": "columnRight", "frame": 141, "x32": 27, "y32": 4, 
+            "repeatY":11, "grab": true, "wallJump": true }
+    ],
+    "decoration": [
+        
+    ],
+    "coins": [
+        
+    ],
+    "hero": {"x32": 5, "y32": 6},
+    "spiders": [
+    ],
+    "door": {"x": 169, "y": 546},
+    "key": {"x": 903, "y": 105},
+    "world": {"w": 920, "h": 600}
+}
