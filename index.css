@@ -7,7 +7,7 @@ body {
 }
 body {
   font-family: 'Press Start 2P', cursive;
-  background: repeating-linear-gradient(to bottom, #6495ED, #6495ED 2px, #fd5800 2px, #fd5800 4px);
+  background: repeating-linear-gradient(to bottom, #0f0a1e, #0f0a1e 2px, #140e29 2px, #140e29 4px);
 }
 div {
   cursor: pointer;
