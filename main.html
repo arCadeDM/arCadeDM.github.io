@@ -31,12 +31,12 @@
       text-align: center;
       padding: 20px;
       margin: 20px;
-      div.item.playable {
-        border: 10px solid Orange;
+      .playable {
+        border: 1em solid Orange;
       }
-      div.item.comingSoon {
-        border: 10px solid Gray;
-      }      
+      .comingSoon {
+        border: 1em solid Gray;
+      }
     }
     img {
         min-width: 250px;
@@ -52,6 +52,11 @@
   <div class="borderDouble">
     <div class="headerSmall">Cade D. Maguire's</div>
     <div class="headerBig">ARCADE</div>
+  </div>
+  
+  <div class="item playable" onclick="window.location.href='/games/maze_of_doom/index.html'" >
+    <img src="/games/maze_of_doom/images/logo.png"/>
+    <span class="caption">Maze Of Doom</span>
   </div>
   
   <div class="item playable" onclick="window.location.href='/games/chip_boy_ultra_boy/cbub.html'" >
