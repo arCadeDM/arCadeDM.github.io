@@ -5,10 +5,12 @@ body {
   height: 100%;
   cursor: pointer;
 }
+
 body {
   font-family: 'Press Start 2P', cursive;
   background: repeating-linear-gradient(to bottom, #0f0a1e, #0f0a1e 2px, #140e29 2px, #140e29 4px);
 }
+
 div {
   cursor: pointer;
   position: absolute;
@@ -27,21 +29,25 @@ div {
   text-shadow: -2px 0 0 #fdff2a, -4px 0 0 #df4a42, 2px 0 0 #91fcfe, 4px 0 0 #4405fc;
   animation: blink 1s steps(4, start) infinite;
 }
+
 @-moz-keyframes blink {
   to {
     visibility: hidden;
   }
 }
+
 @-webkit-keyframes blink {
   to {
     visibility: hidden;
   }
 }
+
 @-o-keyframes blink {
   to {
     visibility: hidden;
   }
 }
+
 @keyframes blink {
   to {
     visibility: hidden;

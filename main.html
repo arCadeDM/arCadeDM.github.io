@@ -1,81 +1,37 @@
 <!DOCTYPE html>
 <html>
-<head>
-  <title>main</title>
-  <style> 
-    @font-face {
-      font-family: arialBlackLocal;
-      src: url(/fonts/arial-black.woff);
-    }
-    body {
-      font-family: arialBlackLocal Black;
-      background: rgb(255,244,232);
-      background: radial-gradient(circle, rgba(255,244,232,1) 0%, rgba(229,241,255,1) 100%);
-      text-align: center;
-    }
-    .headerBig {
-      font-size: 7em;
-    }   
-    .headerSmall {
-      font-size: 3em;
-    }    
-    .borderDouble {
-      display: block;
-      text-align: center;
-      margin: 1em;
-      padding: 1em;
-      border: 1em solid Orange;
-      outline: 1em solid CornflowerBlue;
-    }
 
-    .item {
-      vertical-align: top;
-      display: inline-block;
-      text-align: center;
-      padding: 20px;
-      margin: 20px;
-    }
-    .playable {
-      border: 1em solid Orange;
-    }
-    .comingSoon {
-      border: 1em solid Gray;
-    }
-    .caption {
-        display: block;
-        min-height: 3em;
-    }
-    img {
-        min-width: 250px;
-        min-height: 200px;
-    }
-</style>
+<head>
+  <title>Cade's ARCADE</title>
+  <link rel="stylesheet" href="index.css">
 </head>
-<body>  
+
+<body>
   <div class="borderDouble">
     <div class="headerSmall">Cade D. Maguire's</div>
     <div class="headerBig">ARCADE</div>
   </div>
-  
-  <div class="item playable" onclick="window.location.href='/games/maze_of_doom/index.html'" >
-    <img src="/games/maze_of_doom/images/logo.png"/>
+
+  <div class="item playable" onclick="window.location.href='/games/maze_of_doom/index.html'">
+    <img src="/games/maze_of_doom/images/logo.png" />
     <span class="caption">Maze Of Doom</span>
   </div>
-  
-  <div class="item playable" onclick="window.location.href='/games/chip_boy_ultra_boy/cbub.html'" >
-    <img src="/games/chip_boy_ultra_boy/images/logo.png"/>
+
+  <div class="item playable" onclick="window.location.href='/games/chip_boy_ultra_boy/cbub.html'">
+    <img src="/games/chip_boy_ultra_boy/images/logo.png" />
     <span class="caption">CHIP BOY & ULTRA BOY</span>
   </div>
 
   <div class="item comingSoon">
-    <img src="/games/dragon_hunter/images/logo.png"/>
-    <span class="caption">Coming Soon:<br/>Dragon Hunter</span>
+    <img src="/games/dragon_hunter/images/logo.png" />
+    <span class="caption">Coming Soon:<br />Dragon Hunter</span>
   </div>
 
   <div class="item comingSoon">
-    <img src="/games/grandmaster_hawk/images/logo.png"/>
-    <span class="caption">Coming Soon:<br/>Star Hawk</span>
+    <img src="/games/grandmaster_hawk/images/logo.png" />
+    <span class="caption">Coming Soon:<br />Star Hawk</span>
   </div>
 
 </body>
+
 </html>
