@@ -1,0 +1,54 @@
+@font-face {
+    font-family: arialBlackLocal;
+    src: url(/fonts/arial-black.woff);
+}
+
+body {
+    font-family: arialBlackLocal Black;
+    background: rgb(255, 244, 232);
+    background: radial-gradient(circle, rgba(255, 244, 232, 1) 0%, rgba(229, 241, 255, 1) 100%);
+    text-align: center;
+}
+
+.headerBig {
+    font-size: 7em;
+}
+
+.headerSmall {
+    font-size: 3em;
+}
+
+.borderDouble {
+    display: block;
+    text-align: center;
+    margin: 1em;
+    padding: 1em;
+    border: 1em solid Orange;
+    outline: 1em solid CornflowerBlue;
+}
+
+.item {
+    vertical-align: top;
+    display: inline-block;
+    text-align: center;
+    padding: 20px;
+    margin: 20px;
+}
+
+.playable {
+    border: 1em solid Orange;
+}
+
+.comingSoon {
+    border: 1em solid Gray;
+}
+
+.caption {
+    display: block;
+    min-height: 3em;
+}
+
+img {
+    min-width: 250px;
+    min-height: 200px;
+}
