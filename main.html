@@ -5,6 +5,9 @@
   <title>Cade's ARCADE</title>
   <link rel="stylesheet" href="modal.css">
   <link rel="stylesheet" href="main.css">
+  <script>
+
+  </script>
 </head>
 
 <body>
@@ -13,7 +16,7 @@
     <div class="headerBig">ARCADE</div>
   </div>
 
-  <div class="item playable" onclick="window.location.href='/games/maze_of_doom/index.html'">
+  <div class="item playable" onclick="document.getElementById('modalMOD').style.display = 'block'">
     <img src="/games/maze_of_doom/images/logo.png" />
     <span class="caption">Maze Of Doom</span>
   </div>
@@ -31,6 +34,14 @@
   <div class="item comingSoon">
     <img src="/games/grandmaster_hawk/images/logo.png" />
     <span class="caption">Coming Soon:<br />Star Hawk</span>
+  </div>
+
+  <div id="modalMOD" class="modal">
+    <div class="modal-content">
+      <span class="close" onclick="document.getElementById('modalMOD').style.display = 'none'">&times;</span>
+      <p>Maze Of Doom</p>
+      <button>Play!</button>
+    </div>
   </div>
 
 </body>
