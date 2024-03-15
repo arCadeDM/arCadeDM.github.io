@@ -21,7 +21,7 @@
     <span class="caption">Maze Of Doom</span>
   </div>
 
-  <div class="item comingSoon" onclick="window.location.href='/games/chip_boy_ultra_boy/cbub.html'">
+  <div class="item comingSoon" onclick="document.getElementById('modalChip').style.display = 'block'">
     <img src="/games/chip_boy_ultra_boy/images/logo.png" />
     <span class="caption">Chip Boy & Ultra Dude</span>
   </div>
@@ -40,7 +40,15 @@
     <div class="modal-content">
       <span class="close" onclick="document.getElementById('modalMOD').style.display = 'none'">&times;</span>
       <p>Maze Of Doom</p>
-      <button>Play!</button>
+      <button onclick="window.location.href='/games/maze_of_doom/index.html'">Play!</button>
+    </div>
+  </div>
+
+  <div id="modalChip" class="modal">
+    <div class="modal-content">
+      <span class="close" onclick="document.getElementById('modalChip').style.display = 'none'">&times;</span>
+      <p>Chip Boy & Ultra Dude</p>
+      <button onclick="window.location.href='/games/chip_boy_ultra_boy/cbub.html'">Play!</button>
     </div>
   </div>
 
