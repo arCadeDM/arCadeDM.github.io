@@ -1,6 +1,8 @@
 @font-face {
     font-family: arialBlackLocal;
     src: url('fonts/arial-black.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
 }
 
 body {
