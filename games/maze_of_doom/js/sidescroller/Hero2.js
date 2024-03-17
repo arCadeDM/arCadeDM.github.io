@@ -41,10 +41,10 @@ class Hero2 extends Phaser.Sprite {
         // player settings:
         this.jumpSpeed = 400;
         this.extraJumpsCurrent = 0;
-        this.extraJumpsMax = 1;
+        this.extraJumpsMax = 3; // ToDo: used to be 1 but for demo make 3;
         this.slidingFramesCurrent = 0;
         this.slidingFramesMax = 32;
-        this.wallJumpPauseDurationLimit = 30;
+        this.wallJumpPauseDurationLimit = 100; // ToDo: used to be 30 but for demo make this longer;
         this.ledgeGrabProximity = 5;
 
         // allowed actions:
@@ -257,7 +257,8 @@ class Hero2 extends Phaser.Sprite {
     }
 
     takeDamage() {
-        this.isAlive = false;
+        // ToDo: Don't die during demo, but bring this back later.
+        //this.isAlive = false;
     }
 
     //#endregion Player State

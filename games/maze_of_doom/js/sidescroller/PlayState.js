@@ -181,14 +181,14 @@ class PlayState {
         this.keys.right.isDown = false;
     }
     
-    // Game State 3: Create (create game entities and set up world here):
+    // Game State "Create": create game entities and set up world here;
     create() {
-        // fade in (from black)
+        // Fade in from black:
         this.game.camera.flash('#000000');
     
         this.game.scale.fullScreenScaleMode = Phaser.ScaleManager.SHOW_ALL;
 
-        // create sound entities
+        // Associate sound assets to game actions:
         this.sfx = {
             jump: this.game.add.audio('sfx:jump'),
             coin: this.game.add.audio('sfx:coin'),
@@ -196,11 +196,12 @@ class PlayState {
             stomp: this.game.add.audio('sfx:stomp'),
             door: this.game.add.audio('sfx:door')
         };
+
+        // Add Background Music audio:
         this.bgm = this.game.add.audio('bgm');
         this.bgm.loopFull();
     
-        // ToDo: there needs to be some initial json load that says 
-        // what json should be loaded next.
+        // Load level data from JSON files:
         let jsonData = this.game.cache.getJSON(`level:${this.level}`);
         this._loadLevel(jsonData);
     
@@ -306,13 +307,14 @@ class PlayState {
             this.hero.isWallJumpPauseR = false;
         }
         else {
-            //isWallJumpPauseLHeight, now wallJumpPauseLHeight
-            if (this.hero.y > this.hero.wallJumpPauseLHeight + 128) {
+            // This logic ensures the player can't just wall jump up a single wall (e.g. Mega Man X) but 
+            // instead has to kick off one wall and then go to another wall. However, let's disable this for the demo; ToDo: bring it back;
+            //if (this.hero.y > this.hero.wallJumpPauseLHeight + 128) {
                 this.hero.canWallJumpL = true;
-            }
-            if (this.hero.y > this.hero.wallJumpPauseRHeight + 128) {
+            //}
+            //if (this.hero.y > this.hero.wallJumpPauseRHeight + 128) {
                 this.hero.canWallJumpR = true;
-            }
+            //}
         }
     
         // hero vs coins (pick up)
