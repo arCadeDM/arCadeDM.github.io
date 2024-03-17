@@ -1372,7 +1372,12 @@ class PlayState {
     }
     
     _loadLevel(data) {
-        addBackgroundToGame(this.game, 'background');
+        if (typeof data.background !== 'undefined') {
+            addBackgroundToGame(this.game, data.background); // ToDo: load different backgrounds based on level data;
+        }
+        else{
+            addBackgroundToGame(this.game, 'background_lava_temple'); // ToDo: load different backgrounds based on level data;
+        }
     
         // Create all the groups/layers that we need (in order, for layering):    
         this.platforms = this.game.add.group();

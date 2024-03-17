@@ -29,5 +29,6 @@
     "hero": {"x": 100, "y": 200},
     "spiders": [{"x": 121, "y": 399}, {"x": 800, "y": 362}, {"x": 500, "y": 147}],
     "door": {"x": 169, "y": 546},
-    "key": {"x": 903, "y": 105}
+    "key": {"x": 903, "y": 105},
+    "background": "background_mountain_lake"
 }

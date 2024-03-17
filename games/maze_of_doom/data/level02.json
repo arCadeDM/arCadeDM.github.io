@@ -41,5 +41,6 @@
     ],
     "door": {"x": 169, "y": 546},
     "key": {"x": 903, "y": 105},
-    "world": {"w": 920, "h": 600}
+    "world": {"w": 920, "h": 600},
+    "background": "background_lava_temple"
 }

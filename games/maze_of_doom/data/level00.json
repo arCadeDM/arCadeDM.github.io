@@ -21,5 +21,6 @@
     "spiders": [
     ],
     "door": {"x": 231, "y": 546},
-    "key": {"x": 525, "y": 336}
+    "key": {"x": 525, "y": 336},
+    "background": "background_lava_temple"
 }
