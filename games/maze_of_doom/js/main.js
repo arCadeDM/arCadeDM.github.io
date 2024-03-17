@@ -40,6 +40,7 @@ var abs=Math.abs;
 
 function addBackgroundToGame(currentGame, backgroundImageName) {
     let img = currentGame.cache.getImage(backgroundImageName);
+    // ToDo: if the level is not the first, I think this needs to load at 0,0 and that would fix the weird offset issues.
     let bg = currentGame.add.image(
         currentGame.world.centerX - img.width/2,
         currentGame.world.centerY - img.height/2,//(currentGame.world.height/-2) + backgroundImageName.height*2, 
