@@ -110,7 +110,7 @@ LoadingState.preload = function () {
     this.game.load.image('icon:coin', 'images/coin_icon.png');
     //this.game.load.image('background', 'images/background.png');
     this.game.load.image('background_lava_temple', 'images/backgrounds/lava_temple.png');
-    this.game.load.image('background_mountain_lake', 'images/backgrounds/mountain_lake.png');
+    this.game.load.image('background_mountain_lake', 'images/backgrounds/mountain_lake.jpg');
     this.game.load.image('invisible-wall', 'images/invisible_wall.png');
 
     this.game.load.spritesheet('landscape', 'images/backgrounds/landscape_tileset_32_001.png', 

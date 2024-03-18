@@ -1,4 +1,5 @@
 {
+    "background": "background_mountain_lake",
     "platforms": [
         {"image": "ground", "x": 0, "y": 546},
         {"image": "grass:4x1", "x": 420, "y": 420}
@@ -21,6 +22,5 @@
     "spiders": [
     ],
     "door": {"x": 231, "y": 546},
-    "key": {"x": 525, "y": 336},
-    "background": "background_lava_temple"
+    "key": {"x": 525, "y": 336}
 }
