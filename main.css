@@ -6,7 +6,7 @@
 }
 
 body {
-    font-family: "Inter var",ui-sans-serif,system-ui,-apple-system,system-ui,"Segoe UI",Roboto,"Helvetica Neue",Arial,"Noto Sans",sans-serif,"Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol","Noto Color Emoji" Black;
+    font-family: Arial, Helvetica, sans-serif Black;
     background: rgb(255, 244, 232);
     background: radial-gradient(circle, rgba(255, 244, 232, 1) 0%, rgba(229, 241, 255, 1) 100%);
     text-align: center;
