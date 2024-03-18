@@ -11,9 +11,10 @@
     z-index: 1;
 
     /* Location of the box */
-    padding-top: 100px;
+    padding-top: 1em;
     left: 0;
     top: 0;
+    padding-bottom: 1em;
     
     /* Full width and height */
     width: 100%;
