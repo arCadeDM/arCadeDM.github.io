@@ -11,9 +11,27 @@
 </head>
 
 <body>
-  <div class="borderDouble">
+  <div class="borderDouble" onclick="document.getElementById('modalHeader').style.display = 'block'">
     <div class="headerSmall">Cade D. Maguire's</div>
     <div class="headerBig">ARCADE</div>
+  </div>
+
+  <div id="modalHeader" class="modal">
+    <div class="modal-content">
+      <span class="close" onclick="document.getElementById('modalHeader').style.display = 'none'">&times;</span>
+      <div class="headerBig">Hi, I'm Cade!</div>
+      <div class="headerSmall">
+        <p>I created this website for the 2024 STEM Fair.</p>
+        <p>(My dad helped a little.)</p>
+        <p>This site will host all the games I make. My dad does most of the programming, and my family and friends help with ideas for games.</p>
+        <p>Let me know if you find any issues: https://github.com/arCadeDM/arCadeDM.github.io/issues</p>
+        <p>Have fun!!</p>
+        <button class="buttonPlay" role="button"
+          onclick="document.getElementById('modalHeader').style.display = 'none', window.location.href='/games/maze_of_doom/index.html'">
+          Play!
+        </button>
+      </div>
+    </div>
   </div>
 
   <div class="item playable" onclick="document.getElementById('modalMOD').style.display = 'block'">
