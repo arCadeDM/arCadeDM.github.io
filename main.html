@@ -23,29 +23,28 @@
 
   <div id="modalMOD" class="modal">
     <div class="modal-content">
-      <span class="close" onclick="document.getElementById('modalMOD').style.display = 'none'">&times;</span>
+      <span class="headerSmall" onclick="document.getElementById('modalMOD').style.display = 'none'">&times;</span>
       <div class="headerBig">Cade The Adventurer In:</div>
       <div class="headerBig">Maze Of Doom</div>
       <div class="headerSmall">
         <p>Play as Cade The Adventurer and traverse an infinite maze filled with deadly monsters!</p>
         <p>Collect as many coins in each level to achieve your high score!</p>
         <p>Endless wall jumping and sword fighting action!</p>
-      </div>
-      <button class="buttonPlay" role="button" onclick="document.getElementById('modalMOD').style.display = 'none', window.location.href='/games/maze_of_doom/index.html'">
-        Play!
-      </button>
+        <button class="buttonPlay" role="button" onclick="document.getElementById('modalMOD').style.display = 'none', window.location.href='/games/maze_of_doom/index.html'">
+          Play!
+        </button>
+    </div>
     </div>
   </div>
 
   <div class="item comingSoon" onclick="document.getElementById('modalChip').style.display = 'block'">
     <img src="/games/chip_boy_ultra_boy/images/logo.png" />
-    <div class="headerSmall">Chip Boy & Ultra Dude</div>
-      <div class="headerSmall">(Coming Soon))</div>
+    <span class="caption">Coming Soon:<br />Chip Boy & Ultra Dude</span>
   </div>
 
   <div id="modalChip" class="modal">
     <div class="modal-content">
-      <span class="close" onclick="document.getElementById('modalChip').style.display = 'none'">&times;</span>
+      <span class="headerSmall" onclick="document.getElementById('modalChip').style.display = 'none'">&times;</span>
       <div class="headerBig">Chip Boy & Ultra Dude</div>
       <div class="headerBig">(Coming Soon)</div>
       <div class="headerSmall">
