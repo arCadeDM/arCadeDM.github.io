@@ -1372,7 +1372,7 @@ class PlayState {
     }
     
     _loadLevel(data) {
-        if (typeof data.background !== 'undefined') {
+        if (typeof data.background !== 'undefined' && data.level === 1) {
             addBackgroundToGame(this.game, data.background); // ToDo: load different backgrounds based on level data;
         }
         else{
