@@ -81,14 +81,42 @@
     </div>
   </div>
 
-  <div class="item comingSoon">
+  <div class="item comingSoon" onclick="document.getElementById('modalDH').style.display = 'block'">
     <img src="/games/dragon_hunter/images/logo.png" />
     <span class="caption">Coming Soon:<br />Dragon Hunter</span>
   </div>
 
-  <div class="item comingSoon">
+  <div id="modalDH" class="modal">
+    <div class="modal-content">
+      <span class="close" onclick="document.getElementById('modalDH').style.display = 'none'">&times;</span>
+      <div class="headerSmall">Coming Soon:</div>
+      <div class="headerBig">Dragon Hunter</div>
+      <div class="p2">
+        <p>In a faraway land, join young D'Xen as he and his tribe battle ferocious dragons!</p>
+        <p>Powerful weapons and mystical magical items scatterd throughout the lands will help you vanquish terrible monsters and spooky entities!</p>
+        <p>Play this exciting platformer soon!</p>
+        <p>(Soon probably means 2026)</p>
+      </div>
+    </div>
+  </div>
+
+  <div class="item comingSoon" onclick="document.getElementById('modalStarHawk').style.display = 'block'">
     <img src="/games/grandmaster_hawk/images/logo.png" />
     <span class="caption">Coming Soon:<br />Star Hawk</span>
+  </div>
+
+  <div id="modalStarHawk" class="modal">
+    <div class="modal-content">
+      <span class="close" onclick="document.getElementById('modalStarHawk').style.display = 'none'">&times;</span>
+      <div class="headerSmall">Coming Soon:</div>
+      <div class="headerBig">Star Hawk</div>
+      <div class="p2">
+        <p>Hundreds of years in the future, you are Star Hawk, the rookie fighter pilot in the global fight against evil invading robots!</p>
+        <p>Travel through expansive zones across the globe to destroy the robots once and for all!</p>
+        <p>Play this exciting vertical shooter soon!</p>
+        <p>(Soon probably means 2027)</p>
+      </div>
+    </div>
   </div>
 
 </body>
