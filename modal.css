@@ -81,6 +81,6 @@
   z-index: 9;
   border: 0;
   transition: box-shadow .2s;
-  font-size: 4em;
+  font-size: 2em;
   overflow: auto;
 }
