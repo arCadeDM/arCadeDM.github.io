@@ -39,6 +39,11 @@
     width: 80%;
 }
 
+.modal-image {
+    max-width: 500px;
+    max-height: 500px;
+}
+
 /* The Close Button */
 .close {
     color: #aaaaaa;
