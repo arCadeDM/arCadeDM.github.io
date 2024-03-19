@@ -22,6 +22,14 @@ body {
     font-size: 3em;
 }
 
+.p1 {
+    font-size: 1em;
+}
+
+.p3 {
+    font-size: 3em;
+}
+
 .borderDouble {
     display: block;
     text-align: center;
