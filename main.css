@@ -11,6 +11,7 @@ body {
     background: rgb(255, 244, 232);
     background: radial-gradient(circle, rgba(255, 244, 232, 1) 0%, rgba(229, 241, 255, 1) 100%);
     text-align: center;
+    overflow: auto;
 }
 
 .headerBig {
