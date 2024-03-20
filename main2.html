@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title>Cade's ARCADE</title>
+  <link rel="stylesheet" href="modal.css">
+  <link rel="stylesheet" href="main.css">
+  <script>
+
+  </script>
+</head>
+
+<body>
+  <div class="borderDouble" onclick="document.getElementById('modalHeader').style.display = 'block'">
+    <div class="headerSmall">Cade D. Maguire's</div>
+    <div class="headerBig">ARCADE</div>
+  </div>
+
+  <div class="main-content">
+
+    <div id="modalHeader" class="modal" style="display: block;">
+      <div class="modal-content">
+        <span class="close" onclick="document.getElementById('modalHeader').style.display = 'none'">&times;</span>
+        <div class="headerBig">Hi, I'm Cade!</div>
+        <div class="headerSmall">
+          <p>I created this website for the 2024 STEAM Fair.</p>
+          <p>(My dad helped a little.)</p>
+          <p>This site will host all the games I make. My dad does most of the programming, and my family and friends
+            help with ideas for games.</p>
+          <p>Have fun!!</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="item playable" onclick="document.getElementById('modalMOD').style.display = 'block'">
+      <img src="/games/maze_of_doom/images/logo.png" />
+      <span class="caption">Maze Of Doom</span>
+    </div>
+
+    <div id="modalMOD" class="modal">
+      <div class="modal-content">
+        <span class="close" onclick="document.getElementById('modalMOD').style.display = 'none'">&times;</span>
+        <div class="headerSmall">Cade The Adventurer In:</div>
+        <div class="headerBig">Maze Of Doom</div>
+        <div class="p2">
+          <p>Play as Cade The Adventurer and traverse an infinite maze filled with deadly monsters!</p>
+          <p>Grab the key to unlock the exit door and move on to the next level, if you dare!</p>
+          <p>Endless wall jumping and sword fighting action!</p>
+          <p>Development Notes:</p>
+          <p>2024-03-16: Enemies don't cause damage to player, and player attack does not damage enemies. Fixing attack collision detection logic will solve this.</p>
+          <button class="buttonPlay" role="button"
+            onclick="document.getElementById('modalMOD').style.display = 'none', window.location.href='/games/maze_of_doom/index.html'">
+            Play
+          </button>
+        </div>
+      </div>
+    </div>
+
+    <div class="item comingSoon" onclick="document.getElementById('modalChip').style.display = 'block'">
+      <img src="/games/chip_boy_ultra_boy/images/logo.png" />
+      <span class="caption">Coming Soon:<br />Chip Boy & Ultra Dude</span>
+    </div>
+
+    <div id="modalChip" class="modal">
+      <div class="modal-content">
+        <span class="close" onclick="document.getElementById('modalChip').style.display = 'none'">&times;</span>
+        <div class="headerSmall">Coming Soon:</div>
+        <div class="headerBig">Chip Boy & Ultra Dude</div>
+        <div class="p2">
+
+          <p>One night, two brothers were playing PlayStation and eating Doritos when...</p>
+          <img class="modal-image" src="/games/chip_boy_ultra_boy/images/intro_1.jpg" />
+
+          <p>Mystical lightning struck their house!</p>
+          <img class="modal-image" src="/games/chip_boy_ultra_boy/images/intro_2.jpg" />
+
+          <p>They were mysteriously transformed into</p>
+          <div class="p3">Ultra Dude</div>
+          <p>a flying PlayStation controller, and</p>
+          <div class="p3">Chip Boy</div>
+          <p>a skateboarding Dorito chip!</p>
+          <img class="modal-image" src="/games/chip_boy_ultra_boy/images/intro_3.png" />
+
+          <p>Join them on their heroic journey!</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="item comingSoon" onclick="document.getElementById('modalDH').style.display = 'block'">
+      <img src="/games/dragon_hunter/images/logo.png" />
+      <span class="caption">Coming Soon:<br />Dragon Hunter</span>
+    </div>
+
+    <div id="modalDH" class="modal">
+      <div class="modal-content">
+        <span class="close" onclick="document.getElementById('modalDH').style.display = 'none'">&times;</span>
+        <div class="headerSmall">Coming Soon:</div>
+        <div class="headerBig">Dragon Hunter</div>
+        <div class="p2">
+          <p>In a faraway land, join young D'Xen as he and his tribe battle ferocious dragons!</p>
+          <p>Powerful weapons and mystical magical items scatterd throughout the lands will help you vanquish terrible
+            monsters and spooky entities!</p>
+          <p>Play this exciting platformer soon!</p>
+          <p>(Soon probably means 2026)</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="item comingSoon" onclick="document.getElementById('modalStarHawk').style.display = 'block'">
+      <img src="/games/grandmaster_hawk/images/logo.png" />
+      <span class="caption">Coming Soon:<br />Star Hawk</span>
+    </div>
+
+    <div id="modalStarHawk" class="modal">
+      <div class="modal-content">
+        <span class="close" onclick="document.getElementById('modalStarHawk').style.display = 'none'">&times;</span>
+        <div class="headerSmall">Coming Soon:</div>
+        <div class="headerBig">Star Hawk</div>
+        <div class="p2">
+          <p>Hundreds of years in the future, you are Star Hawk, the rookie fighter pilot in the global fight against
+            evil invading robots!</p>
+          <p>Travel through expansive zones across the globe to destroy the robots once and for all!</p>
+          <p>Play this exciting vertical shooter soon!</p>
+          <p>(Soon probably means 2027)</p>
+        </div>
+      </div>
+    </div>
+
+  </div>
+  <footer class="site-footer"></footer>
+
+</body>
+
+</html>
